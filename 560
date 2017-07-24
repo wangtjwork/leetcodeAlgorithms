@@ -1,0 +1,9 @@
+560 Subarray Sum Equals K
+
+1. The brute-force solution, using two loops to search through every possible subarray. Taking O(n^2) time to go through all possibilities and each possibility need maximum O(n) computing time. Total time complexity: O(n^3), space O(1). TLE
+
+2. We are aware that in brute-force, the numbers are all added multiple times. So naturally, we can memorize the computed subarrays and use them to compute next ones. Lead to a matrix memory implementation, with mem[i][j] denotes the sum of subarray from position i to position j. In here we have only to fill O(n^2) positions, and each filling takes O(1) time. Total time complexity: O(n^2), space O(n^2). MLE
+
+3. In solution 2, we fill the memory matrix in a diagonal manner. But each time, only the original number array and the last seen array is needed. So we can reduce the space needed to O(n). Total time complexity: O(n^2), space O(n). Passed with 10% beaten.
+
+4. To calculate the sum of each subarray A[i,j], we only need to know the sum of A[0,j] and the sum of A[0, i-1], and calculate the difference. As we only need the total count of given number k, we can store each possible sum number in a hashmap, and able to check in O(1) time if for each A[0,j] there exists an A[0, i-1] which difference is k using hashmap lookup. Total time complexity: O(n), space O(n).
