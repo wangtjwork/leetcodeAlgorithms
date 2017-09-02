@@ -1,0 +1,13 @@
+611 Vaild Triangle Number
+
+1.Brute-force search: Try every combination of numbers and see if they fit into triangle, that is, all sum of two edges is greater than the third edge. Total time complexity: O(n^3). Space complexity: O(1).
+
+2.From the edges condition, we noticed that limiting the rule to the sum of two smaller edge is greater than the largest edge is sufficient enough. So we can sort it first small to large, and start two loops from the beginning. This way, we are always looking for the largest edge, so reduced three validations to one. Total time complexity: O(n^3), space O(1);
+
+3.We can further improve the "search for largest edge" part by using binary search at the subarray. It's sorted and all we need is a count, that is, an index on the largest item that's smaller than the upperbound, which is two smaller ones. Total time complexity: O(n^2logn), space O(1);
+
+----
+
+4. In contrast, we can start the "search for largest edge" part in the reversed direction. We can first choose the largest one, and then find a sum of two numbers larger than the largest. The finding could be done using two sum and two pointers in linear time. Total time complexity: O(n^2), space O(1);
+
+In this perspective, this problem is only a variation of three-sum problem.

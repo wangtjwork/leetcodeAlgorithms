@@ -1,0 +1,9 @@
+27. Removing Elements
+
+This problem is an easy one. However it does require some opposite thinking.
+
+If we would like to require the part left be filled with the value, then the best way to do is to use a swap algorithm, and have two pointers one start from 0 and the other decrease from nums.length - 1.
+
+But since now we don't care what's in the part left, we could just think in the opposite way. Not REMOVE the specified value but INSERT the valid values from the beginning. We can have two pointers one indicate the element we're now looking at and the other indicate the position to insert the value.
+
+Both solutions comes with O(1) time but the former is slightly hard to implement.

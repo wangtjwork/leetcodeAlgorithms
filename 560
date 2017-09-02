@@ -6,4 +6,6 @@
 
 3. In solution 2, we fill the memory matrix in a diagonal manner. But each time, only the original number array and the last seen array is needed. So we can reduce the space needed to O(n). Total time complexity: O(n^2), space O(n). Passed with 10% beaten.
 
-4. To calculate the sum of each subarray A[i,j], we only need to know the sum of A[0,j] and the sum of A[0, i-1], and calculate the difference. As we only need the total count of given number k, we can store each possible sum number in a hashmap, and able to check in O(1) time if for each A[0,j] there exists an A[0, i-1] which difference is k using hashmap lookup. Total time complexity: O(n), space O(n).
+----
+
+4. To calculate the sum of each subarray A[i,j], we only need to know the sum of A[0,j] and the sum of A[0, i-1], and calculate the difference. As we only need the total count of given number k, we can store each possible sum number in a hashmap, and able to check in O(1) time if for each A[0,j] there exists an A[0, i-1] which difference is k using hashmap lookup. Total time complexity: O(n), space O(n). Passed with 54% beaten.

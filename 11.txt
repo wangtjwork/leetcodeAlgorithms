@@ -1,0 +1,21 @@
+11. Container with most water
+
+In this problem, we need to find a container that could hold most water. It is easily seen that the container's ability to hold depends on the shorter edge. So we need to find a pair of edges that is far enough from each other and the shorter of the edges long enough. 
+
+1. Brute-force Search:
+    Loop through each possible combination. Keep track of the maximum during iteration. Takes O(n^2) time and O(1) space.
+    
+2. In Brute-force, we do this like filling a matrix row by row. Say we have n = 6 edges. And each element (i,j) in the matrix represents the size of the container provided by the two edges i and j. 
+
+It's something like this: X 1 2 3 4 5
+                          X X 3 4 5 6
+                          X X X 5 6 7
+                          X X X X 7 8
+                          X X X X X 9.
+When iterating in this sequence, the only thing we could do is speeding up the multiplication, cause in each step there's no boundary on the other edge and the distance between them.
+
+We can change the sequence of the way we iterates. Starting from the point (1,6). Say that the shorter edge is 1. Now do we need to look at the points (1,2), (1,3), (1,4), (1,5)? No! Because if shorter edge is 1, then all points above would be using a shorter edge, which is one or less than one, while at the meantime, the distance between the edges are smaller than (1,6). So both of the parameters in the multiplication is smaller and the results will undoubtably be smaller.
+
+So we could only go down one step and see if edge 2 is bigger than edge 1 and the result is bigger. 
+
+If shorter edge is 6, the same statement still holds. In this way, each time we only choose one direction and there's no going back. So we'll travel at most n - 1 times to find out the possible number. Time complexity O(n) and space O(1).
