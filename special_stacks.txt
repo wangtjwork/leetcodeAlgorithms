@@ -1,0 +1,9 @@
+Increase stack/ Decrease Stack:
+
+A stack with all values in it maintain a increasing/decreasing sequence.
+
+Great for the situation when we need to find left and right closest element smaller/larger than the current in an array.
+
+Problems 86 and 654 could make use of this.
+
+86 is finding the smaller boundary, and 654 is finding the larger boundary, if constructed bottom-up.
