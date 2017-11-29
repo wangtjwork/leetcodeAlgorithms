@@ -1,0 +1,10 @@
+For String problems, searching through the whole dictionary to find the next state is usually a bad idea.
+
+Therefore, we could consider all possible states for the current string, and check if they are in the dictionary, instead of going through the dictionary to find next valid states.
+It's because strings mostly have limited number of next states. Like for changing a character, we only have string.length * 26 possible next strings, and the dictionary size could well be above 100,000. And for palindrome strings, we have only to check all string.length substrings to look for the next string.
+
+HashTables vs Trie Trees:
+HashTables storing every possible prefix functions exactly the same as trie trees. Without regards to collisions, they look up words in O(1) time.
+Trie Trees stores every possible prefix in another way, and looking up a word can take about O(logl) time, where l is the longest string in the dictionary.
+However, notice that hashtables should be taking more space than trie trees because nodes can mean the character is in more than one word.
+This is an interesting use of tradeoff between time and space complexity.
